@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Linq;
 
-namespace Codewars
+public class Kata
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        Console.WriteLine(DuplicateCount("Indivisibilities")); 
 
-            LargestPairSum(new int[] {-8,-8,-16,-19 });
-        }
+    }
+    public static int DuplicateCount(string str)
+    {
+     int x= Int32.Parse( str.ToLower().GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count()).Values.Max().ToString());
+        return 5;
        
-            public static int LargestPairSum(int[] numbers)
-            {
-     Array.Sort(numbers);
-            Array.Reverse(numbers);
-
-            return numbers[0] + numbers[1];            }
-        
     }
 }
